@@ -1,5 +1,7 @@
+import numpy as np
+
 def logistic_map(x,r):
-    log_m =r*x *(1-x) 
+    log_m =r*x *(1-x)
     return log_m
 
 def iterate_f(it, xi, r):
@@ -12,7 +14,7 @@ def iterate_f(it, xi, r):
     x = xi
     l = []
     for _ in range(it):
-        x = f(x, r)
+        x = logistic_map(x, r)
         l.append(x)
 
     return np.array(l)
